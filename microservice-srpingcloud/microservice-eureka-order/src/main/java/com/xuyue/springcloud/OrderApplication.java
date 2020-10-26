@@ -11,8 +11,6 @@ package com.xuyue.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * 类功能说明：TODO
@@ -23,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class Application
+public class OrderApplication
 {
     
     /** 
@@ -34,18 +32,7 @@ public class Application
      */
     public static void main(String[] args)
     {
-        SpringApplication.run(Application.class);
-    }
-    
-    /**
-     * 
-     * @Title:restTemplate
-     * @Description:创建RestTemplate实例
-     * @return RestTemplate 返回类型
-     */
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+        SpringApplication.run(OrderApplication.class);
     }
     
 }

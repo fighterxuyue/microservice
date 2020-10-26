@@ -1,27 +1,21 @@
-/**   
- * @Title: Application.java 
- * @Package com.xuyue.springcloud 
- * @Description: TODO(用一句话描述该文件做什么) 
- * @author xuyue fighterxuyue@163.com
- * @date 2020年10月23日 上午9:59:37 
- * @version V1.0   
- */
 package com.xuyue.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * 类功能说明：TODO
- * <p>Title:Application</p>
+ * <p>Title:EurekaApplication</p>
  * @author  xuyue fighterxuyue@163.com
- * @date 2020年10月23日 上午9:59:37
+ * @date 2020年10月23日 上午9:30:51
  * @version  v1.0
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class Application
+@EnableZuulProxy//开启Zuul的API网关功能
+public class ZuulApplication
 {
     
     /** 
@@ -32,7 +26,7 @@ public class Application
      */
     public static void main(String[] args)
     {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(ZuulApplication.class);
     }
     
 }

@@ -30,6 +30,6 @@ public class UserController
     @GetMapping("/findOrdersByUser/{id}")
     public String findOrdersByUser(@PathVariable String id) {
         int oid=123;
-        return restTemplate.getForObject("http://localhost:7900/order/"+oid, String.class);
+        return restTemplate.getForObject("http://microservice-eureka-order/order/"+oid, String.class);
     }
 }
