@@ -3,5 +3,9 @@ server:
   
 spring:  application:    name: microservice-config-client
   cloud:    config:      profile: prod #配置中心的{profile}
+      label: main  #git存储指定分支
       uri: http://localhost:8888 #配置中心地址
+      
+# management.security.enabled=false 在1.5.x版本中暴露所有端点,2.X使用如下方式
+management:  endpoints:    web:      exposure:        include: "*"
            

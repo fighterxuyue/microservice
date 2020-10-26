@@ -1,5 +1,14 @@
 server:
   port: 8888
 spring:  application:    name: microservice-config-server
-  profiles:    active: native  #使用本地存储的方式来保存配置文件
-           
+#  profiles:#    active: native  #使用本地存储的方式来保存配置文件
+  cloud:    config:      server:        git:          uri: https://github.com/fighterxuyue/microservice-config.git  #使用git方式存储
+          #username: 私有仓库需要的用户名
+          #password: 私有仓库需要的密码
+    
+# management.security.enabled=false 在1.5.x版本中暴露所有端点,2.X使用如下方式
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"           
